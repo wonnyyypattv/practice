@@ -1,23 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Drawing</title>
+    <title>Lotto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Lotto Drawing</h1>
-        <div class="lotto-machine">
-            <div class="lotto-numbers"></div>
-            <button id="draw-button">Draw Numbers</button>
+        <div class="header">
+            <span class="logo">🎱</span>
+            <h1>Lotto</h1>
+            <p class="subtitle">행운의 번호를 뽑아보세요</p>
         </div>
-        <div class="results">
-            <h2>Winning Numbers</h2>
-            <div class="winning-numbers"></div>
+
+        <div class="ball-display">
+            <div class="winning-numbers" id="winning-numbers">
+                <div class="placeholder-ball"></div>
+                <div class="placeholder-ball"></div>
+                <div class="placeholder-ball"></div>
+                <div class="placeholder-ball"></div>
+                <div class="placeholder-ball"></div>
+                <div class="placeholder-ball"></div>
+            </div>
+        </div>
+
+        <button id="draw-button">
+            <span class="btn-text">번호 추첨</span>
+            <span class="btn-icon">→</span>
+        </button>
+
+        <div class="history" id="history">
+            <h3>추첨 기록</h3>
+            <div class="history-list" id="history-list"></div>
         </div>
     </div>
+
     <script src="main.js"></script>
 </body>
 </html>
