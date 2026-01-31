@@ -163,6 +163,46 @@ h1 {
     transform: translateX(3px);
 }
 
+/* Recent Wins */
+.recent-wins {
+    text-align: left;
+    margin-bottom: 24px;
+    padding-top: 4px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.recent-wins h3 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #86868b;
+    margin-bottom: 10px;
+    padding: 0 4px;
+}
+
+.recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.recent-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #f5f5f7;
+    border-radius: 10px;
+}
+
+.recent-round {
+    font-size: 11px;
+    font-weight: 600;
+    color: #aeaeb2;
+    min-width: 42px;
+}
+
 /* History */
 .history {
     text-align: left;

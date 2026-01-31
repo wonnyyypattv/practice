@@ -38,6 +38,39 @@ document.addEventListener('DOMContentLoaded', () => {
         return 'range-40';
     }
 
+    // 최근 5회차 실제 당첨번호
+    const recentWins = [
+        { round: 1208, nums: [6, 27, 30, 36, 38, 42] },
+        { round: 1207, nums: [10, 22, 24, 27, 38, 45] },
+        { round: 1206, nums: [1, 3, 17, 26, 27, 42] },
+        { round: 1205, nums: [1, 4, 16, 23, 31, 41] },
+        { round: 1204, nums: [8, 16, 28, 30, 31, 44] },
+    ];
+
+    // 최근 당첨번호 렌더링
+    const recentList = document.getElementById('recent-list');
+    recentWins.forEach(({ round: r, nums }) => {
+        const item = document.createElement('div');
+        item.classList.add('recent-item');
+
+        const label = document.createElement('span');
+        label.classList.add('recent-round');
+        label.textContent = `${r}회`;
+
+        const numsWrap = document.createElement('div');
+        numsWrap.classList.add('nums');
+        nums.forEach(n => {
+            const ball = document.createElement('span');
+            ball.classList.add('mini-ball', getRange(n));
+            ball.textContent = n;
+            numsWrap.appendChild(ball);
+        });
+
+        item.appendChild(label);
+        item.appendChild(numsWrap);
+        recentList.appendChild(item);
+    });
+
     drawButton.addEventListener('click', drawNumbers);
 
     function drawNumbers() {
