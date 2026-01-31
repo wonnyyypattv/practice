@@ -18,7 +18,7 @@ body {
 
 .container {
     background: #ffffff;
-    padding: 48px 32px;
+    padding: 40px 28px;
     border-radius: 24px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
     text-align: center;
@@ -28,63 +28,83 @@ body {
 
 /* Header */
 .header {
-    margin-bottom: 36px;
+    margin-bottom: 32px;
 }
 
 .logo {
-    font-size: 40px;
+    font-size: 36px;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     letter-spacing: -0.5px;
     color: #1d1d1f;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .subtitle {
-    font-size: 15px;
+    font-size: 14px;
     color: #86868b;
     font-weight: 400;
 }
 
 /* Ball Display */
 .ball-display {
-    margin-bottom: 28px;
-    padding: 24px 16px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
     background: #f5f5f7;
     border-radius: 16px;
 }
 
 .winning-numbers {
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.placeholder-ball {
-    width: 56px;
-    height: 40px;
-    border-radius: 12px;
-    background: #e8e8ed;
+.empty-state {
+    color: #c7c7cc;
+    font-size: 14px;
+    padding: 30px 0;
+}
+
+/* Set Row: label + 6 numbers */
+.set-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.set-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #86868b;
+    width: 20px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.set-nums {
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
 }
 
 .number {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 56px;
-    height: 40px;
-    border-radius: 12px;
-    font-size: 17px;
+    width: 50px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 16px;
     font-weight: 700;
     color: #fff;
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(6px);
     transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -97,7 +117,7 @@ h1 {
 .number.range-1 { background: #007aff; }
 .number.range-10 { background: #ff9500; }
 .number.range-20 { background: #ff3b30; }
-.number.range-30 { background: #86868b; }
+.number.range-30 { background: #6e6e73; }
 .number.range-40 { background: #34c759; }
 
 /* Draw Button */
@@ -116,7 +136,7 @@ h1 {
     transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     font-family: inherit;
     letter-spacing: -0.2px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
 }
 
 #draw-button:hover {
@@ -161,8 +181,8 @@ h1 {
 .history-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    max-height: 200px;
+    gap: 10px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -175,37 +195,48 @@ h1 {
     border-radius: 4px;
 }
 
-.history-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 12px;
+.history-group {
     background: #f5f5f7;
     border-radius: 12px;
+    padding: 12px;
     animation: slideIn 0.3s ease;
 }
 
-.history-item .round {
+.history-round {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     color: #86868b;
-    min-width: 28px;
+    margin-bottom: 8px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+}
+
+.history-item .round {
+    font-size: 11px;
+    font-weight: 600;
+    color: #aeaeb2;
+    min-width: 16px;
 }
 
 .history-item .nums {
     display: flex;
-    gap: 5px;
+    gap: 4px;
     flex-wrap: nowrap;
 }
 
 .history-item .mini-ball {
-    width: 32px;
-    height: 24px;
-    border-radius: 6px;
+    width: 28px;
+    height: 20px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     color: #fff;
 }
@@ -213,7 +244,7 @@ h1 {
 .mini-ball.range-1 { background: #007aff; }
 .mini-ball.range-10 { background: #ff9500; }
 .mini-ball.range-20 { background: #ff3b30; }
-.mini-ball.range-30 { background: #86868b; }
+.mini-ball.range-30 { background: #6e6e73; }
 .mini-ball.range-40 { background: #34c759; }
 
 @keyframes slideIn {
