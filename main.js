@@ -150,4 +150,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
         historyList.prepend(group);
     }
+
+    // 폼: 자동 채우기
+    document.getElementById('fill-random').addEventListener('click', () => {
+        const nums = weightedPick(6);
+        const inputs = document.querySelectorAll('.form-numbers input');
+        inputs.forEach((input, i) => { input.value = nums[i]; });
+    });
+
+    // 폼: 제출 처리
+    const form = document.getElementById('lotto-form');
+    const formMsg = document.getElementById('form-msg');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const inputs = document.querySelectorAll('.form-numbers input');
+        const values = [...inputs].map(i => parseInt(i.value));
+
+        // 유효성 검사
+        if (values.some(v => isNaN(v) || v < 1 || v > 45)) {
+            formMsg.textContent = '1~45 사이의 숫자를 입력해주세요';
+            formMsg.className = 'form-msg error';
+            return;
+        }
+        if (new Set(values).size !== 6) {
+            formMsg.textContent = '중복되지 않는 6개 번호를 입력해주세요';
+            formMsg.className = 'form-msg error';
+            return;
+        }
+
+        const data = new FormData(form);
+        data.set('numbers', values.sort((a, b) => a - b).join(', '));
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                formMsg.textContent = '번호가 제출되었습니다!';
+                formMsg.className = 'form-msg';
+                form.reset();
+            } else {
+                throw new Error();
+            }
+        } catch {
+            formMsg.textContent = '제출에 실패했습니다. 다시 시도해주세요.';
+            formMsg.className = 'form-msg error';
+        }
+    });
 });

@@ -163,6 +163,130 @@ h1 {
     transform: translateX(3px);
 }
 
+/* My Numbers Form */
+.my-numbers {
+    text-align: left;
+    margin-bottom: 24px;
+    padding-top: 4px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.my-numbers h3 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #86868b;
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.form-numbers {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.form-numbers input {
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid #e8e8ed;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    color: #1d1d1f;
+    background: #f5f5f7;
+    transition: border-color 0.2s;
+    -moz-appearance: textfield;
+}
+
+.form-numbers input::-webkit-outer-spin-button,
+.form-numbers input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-numbers input:focus {
+    outline: none;
+    border-color: #007aff;
+    background: #fff;
+}
+
+.form-nickname {
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid #e8e8ed;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #1d1d1f;
+    background: #f5f5f7;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+}
+
+.form-nickname:focus {
+    outline: none;
+    border-color: #007aff;
+    background: #fff;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-secondary {
+    flex: 1;
+    height: 40px;
+    border: 1.5px solid #e8e8ed;
+    border-radius: 980px;
+    background: #fff;
+    color: #1d1d1f;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f7;
+}
+
+.btn-submit {
+    flex: 1;
+    height: 40px;
+    border: none;
+    border-radius: 980px;
+    background: #007aff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-submit:hover {
+    background: #0063d1;
+}
+
+.form-msg {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+    color: #34c759;
+    min-height: 20px;
+}
+
+.form-msg.error {
+    color: #ff3b30;
+}
+
 /* Recent Wins */
 .recent-wins {
     text-align: left;

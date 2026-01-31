@@ -27,6 +27,27 @@
             <span class="btn-icon">→</span>
         </button>
 
+        <div class="my-numbers">
+            <h3>나만의 번호 제출</h3>
+            <form id="lotto-form" action="https://formspree.io/f/xlgnkdge" method="POST">
+                <div class="form-numbers">
+                    <input type="number" name="num1" min="1" max="45" placeholder="1" required>
+                    <input type="number" name="num2" min="1" max="45" placeholder="2" required>
+                    <input type="number" name="num3" min="1" max="45" placeholder="3" required>
+                    <input type="number" name="num4" min="1" max="45" placeholder="4" required>
+                    <input type="number" name="num5" min="1" max="45" placeholder="5" required>
+                    <input type="number" name="num6" min="1" max="45" placeholder="6" required>
+                </div>
+                <input type="text" name="nickname" placeholder="닉네임 (선택)" class="form-nickname">
+                <input type="hidden" name="_subject" value="로또 번호 제출">
+                <div class="form-actions">
+                    <button type="button" id="fill-random" class="btn-secondary">자동 채우기</button>
+                    <button type="submit" class="btn-submit">제출하기</button>
+                </div>
+                <p class="form-msg" id="form-msg"></p>
+            </form>
+        </div>
+
         <div class="recent-wins">
             <h3>최근 당첨번호</h3>
             <div class="recent-list" id="recent-list"></div>
